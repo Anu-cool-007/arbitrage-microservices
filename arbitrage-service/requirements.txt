@@ -1,0 +1,8 @@
+flask
+flask_login
+flask_migrate
+flask_restx
+Flask-SocketIO
+waitress
+python-dotenv
+requests
