@@ -1,0 +1,9 @@
+flask
+flask-cors
+flask_login
+flask_migrate
+flask_restx
+flask_sock
+gunicorn
+python-dotenv
+requests
