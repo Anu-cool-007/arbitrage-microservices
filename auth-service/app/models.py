@@ -12,7 +12,12 @@ class User(UserMixin, db.Model):
     date_added = db.Column(db.DateTime, default=datetime.utcnow)
 
     def generate_token(self):
-        self.toekn = self.username + str(datetime.utcnow)
+        self.token = self.username + str(
+            datetime.strptime(
+                "20.12.2016 09:38:42,76", "%d.%m.%Y %H:%M:%S,%f"
+            ).timestamp()
+            * 1000
+        )
 
     def __repr__(self):
         return "<User %r>" % (self.username)

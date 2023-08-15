@@ -34,31 +34,35 @@ def get_users():
 
 @auth_api_blueprint.route("/api/user/create", methods=["POST"])
 def post_register():
-    name = request.form["name"]
-    username = request.form["username"]
-    password = request.form["password"]
+    name = request.get_json()["name"]
+    username = request.get_json()["username"]
+    password = request.get_json()["password"]
+    user = User.query.filter_by(username=username).first()
+    if not user:
+        user = User()
+        user.name = name
+        user.username = username
+        user.password = password
 
-    user = User()
-    user.name = name
-    user.username = username
-    user.password = password
+        user.generate_token()
+        print(user)
 
-    user.generate_token()
+        db.session.add(user)
+        db.session.commit()
 
-    db.session.add(user)
-    db.session.commit()
-
-    response = jsonify({"message": "User added", "result": user.to_json()})
+        response = jsonify({"message": "User added", "result": user.to_json()})
+    else:
+        response = make_response(jsonify({"message": "User already present"}), 500)
 
     return response
 
 
 @auth_api_blueprint.route("/api/user/login", methods=["POST"])
 def post_login():
-    username = request.form["username"]
+    username = request.get_json()["username"]
     user = User.query.filter_by(username=username).first()
     if user:
-        if request.form["password"] == user.password:
+        if request.get_json()["password"] == user.password:
             user.generate_token()
             db.session.commit()
             login_user(user)
