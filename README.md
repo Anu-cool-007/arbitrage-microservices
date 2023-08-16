@@ -53,6 +53,26 @@ To run the frontend app, in frontend folder, run `yarn run dev`
 
 Configuration for every flask app is in `<folder>/app/__init__.py -> create_app()`
 
+## Folder structure
+
+```bash
+flask-service               # root folder
+├─── run.py                 # main file
+├─── requirements.txt       # pip requirements
+├─── .env                   # env config
+└─── app                    # src folder
+  ├─── __init__.py          # init file primarily contains flask app factory for main file
+  ├─── models.py            # db models and dataclasses
+  ├─── util.py              # utility functions for business logic
+  └─── flask-api            # controller folder
+    ├─── __init__.py        # init file primarily containing blueprints and routes/events
+    ├─── routes.py          # http routes
+    └─── events.py          # SocketIO events
+      └─── api              # external API handling
+        ├─── __init__.py
+        └─── ApiClient.py   # class with static methods for fetching API data
+```
+
 ## Flow Diagram
 
 ### Login Flow
