@@ -34,6 +34,20 @@ To run the frontend app, in frontend folder, run `yarn run dev`
 
 Configuration for every flask app is in `<folder>/app/__init__.py -> create_app()`
 
+## Flow Diagram
+
+### Login Flow
+
+![Login Flow](loginflow.png)
+
+### Arbitrage Flow
+
+![Arbitrage Flow](arbitrageflow.png)
+
+### Trade Flow
+
+![Trade Flow](tradeflow.png)
+
 ## Screenshots
 
 ### Home Screen
@@ -47,5 +61,6 @@ Configuration for every flask app is in `<folder>/app/__init__.py -> create_app(
 ## TODO (in priority order)
 
 - [ ] Update code documentation
+- [ ] Refresh crypto data regularly
 - [ ] Fix 2.3s API response from frontend
 - [ ] Add Auth to arbitrage-service
