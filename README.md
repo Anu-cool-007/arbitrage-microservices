@@ -36,3 +36,9 @@ Configuration for every flask app is in `<folder>/app/__init__.py -> create_app(
 ### Login Screen
 
 ![Login Screen](login.png)
+
+## TODO (in priority order)
+
+- [ ] Update code documentation
+- [ ] Fix 2.3s API response from frontend
+- [ ] Add Auth to arbitrage-service
