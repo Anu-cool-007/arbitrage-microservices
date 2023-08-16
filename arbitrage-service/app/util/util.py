@@ -4,6 +4,9 @@ import math
 from app.models.models import Arbitrage
 
 
+# Calculate arbitrade from crypto data and threshold
+# Primary logic is to find differences of prices in exchange pairs
+# and finding the number of units required to pass the threshold when trading
 def get_arbitrage(
     data: dict[str, dict[str, dict[str, int]]], threshold: int
 ) -> list[Arbitrage]:
@@ -14,8 +17,8 @@ def get_arbitrage(
                 [exchange, data[symbol][currency][exchange]]
                 for exchange in data[symbol][currency]
             ]
+            # list of all possible pairs. pair structure -> (['Coinbase', 29288.7], ['Bitfinex', 29330])
             pairs = list(combinations(currency_data, 2))
-            print(symbol, currency, pairs)
             for pair in pairs:
                 if pair[0][1] > pair[1][1]:
                     arbitrage = Arbitrage(

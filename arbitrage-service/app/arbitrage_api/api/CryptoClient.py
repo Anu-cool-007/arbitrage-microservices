@@ -3,6 +3,7 @@ import requests
 CMC_URL = "https://min-api.cryptocompare.com/data/generateAvg"
 
 
+# API client for Crypto API
 def get_crypto_data(
     api_key: str,
     symbols: list[str],

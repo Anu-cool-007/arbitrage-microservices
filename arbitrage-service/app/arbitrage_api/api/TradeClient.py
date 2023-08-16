@@ -3,6 +3,7 @@ from app.models.models import Arbitrage
 import dataclasses
 
 
+# API client for Trade service
 class TradeClient:
     @staticmethod
     def create_trade(token, arbitrage: Arbitrage):

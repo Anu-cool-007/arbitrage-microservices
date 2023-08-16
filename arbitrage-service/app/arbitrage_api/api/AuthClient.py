@@ -1,6 +1,7 @@
 import requests
 
 
+# API client for Auth service
 class AuthClient:
     @staticmethod
     def get_user(token):
