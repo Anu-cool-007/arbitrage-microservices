@@ -2,6 +2,24 @@
 
 A collection of flask microservices and react frontend to make arbitrage trades
 
+It calculates Cross exchange arbitrage possibilities with multiple symbols, currencies and exchanges.
+
+Grouping is done on Symbols and Currencies
+
+Sample
+
+```json
+{
+  "BTC": {
+    "USD": {
+      "Coinbase": Arbitrage,
+      "Kraken": Arbitrage,
+      "Bitfinex": Arbitrage
+    }
+  }
+}
+```
+
 ## API
 
 ## Installation
