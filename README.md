@@ -6,15 +6,14 @@ It calculates Cross exchange arbitrage possibilities with multiple symbols, curr
 
 Grouping is done on Symbols and Currencies
 
-Sample
+Sample (not a representation of internal structure)
 
 ```json
 {
   "BTC": {
     "USD": {
-      "Coinbase": Arbitrage,
-      "Kraken": Arbitrage,
-      "Bitfinex": Arbitrage
+      "Coinbase": "Kraken",
+      "Bitfinex": "Kraken"
     }
   }
 }
