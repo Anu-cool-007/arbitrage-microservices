@@ -3,7 +3,7 @@ from . import auth_api_blueprint
 from .. import db, login_manager
 from ..models import User
 from flask import make_response, request, jsonify
-from flask_login import login_user
+from flask_login import current_user, login_user, login_required
 
 
 @login_manager.user_loader
@@ -16,7 +16,7 @@ def load_user_from_request(request):
     token = request.headers.get("Authorization")
     if token:
         token = token.replace("Basic ", "", 1)
-        user = User.query.filter_by(toekn=token).first()
+        user = User.query.filter_by(token=token).first()
         if user:
             return user
     return None
@@ -74,3 +74,13 @@ def post_login():
             )
 
     return make_response(jsonify({"message": "Not logged in"}), 401)
+
+
+@auth_api_blueprint.route("/api/user", methods=["GET"])
+def get_user():
+    user: User = load_user_from_request(request=request)
+    print(user)
+    if user:
+        return make_response(jsonify({"result": user.to_json()}))
+
+    return make_response(jsonify({"message": "Not logged in"})), 401

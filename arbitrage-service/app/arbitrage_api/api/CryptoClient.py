@@ -1,5 +1,4 @@
 import requests
-import json
 
 CMC_URL = "https://min-api.cryptocompare.com/data/v4/all/exchanges"
 

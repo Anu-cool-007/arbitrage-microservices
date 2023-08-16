@@ -1,0 +1,55 @@
+{
+    "BTC": {
+        "USD": {
+            "Coinbase": 29288.7,
+            "Kraken": 29289.9,
+            "Bitfinex": 29330
+        },
+        "EUR": {
+            "Binance": 27024.24,
+            "Coinbase": 26800.5,
+            "Kraken": 26782.9,
+            "Bitfinex": 26837
+        },
+        "GBP": {
+            "Binance": 24885.91,
+            "Coinbase": 22990.75,
+            "Kraken": 22988.7,
+            "Bitfinex": 23003
+        }
+    },
+    "ETH": {
+        "USD": {
+            "Coinbase": 1837.57,
+            "Kraken": 1837.68,
+            "Bitfinex": 1839.9
+        },
+        "EUR": {
+            "Binance": 1695.23,
+            "Coinbase": 1681.57,
+            "Kraken": 1680.33,
+            "Bitfinex": 1684.1
+        },
+        "GBP": {
+            "Binance": 1561.08,
+            "Coinbase": 1442.11,
+            "Kraken": 1442.29,
+            "Bitfinex": 1443.8
+        }
+    },
+    "USDT": {
+        "USD": {
+            "Coinbase": 0.9985,
+            "Kraken": 0.9985,
+            "Bitfinex": 1
+        },
+        "EUR": {
+            "Coinbase": 0.9136,
+            "Kraken": 0.9131
+        },
+        "GBP": {
+            "Coinbase": 0.7837,
+            "Kraken": 0.7838
+        }
+    }
+}

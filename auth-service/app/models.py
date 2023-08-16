@@ -13,10 +13,12 @@ class User(UserMixin, db.Model):
 
     def generate_token(self):
         self.token = self.username + str(
-            datetime.strptime(
-                "20.12.2016 09:38:42,76", "%d.%m.%Y %H:%M:%S,%f"
-            ).timestamp()
-            * 1000
+            int(
+                datetime.strptime(
+                    "20.12.2016 09:38:42,76", "%d.%m.%Y %H:%M:%S,%f"
+                ).timestamp()
+                * 1000
+            )
         )
 
     def __repr__(self):
