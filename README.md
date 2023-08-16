@@ -2,7 +2,9 @@
 
 A collection of flask microservices and react frontend to make arbitrage trades
 
-## Usage
+## API
+
+## Installation
 
 Clone the library. create python venv in each microservices
 
@@ -20,6 +22,10 @@ In frontend folder, run `yarn install`
 
 To run flask microservices, in each folder, run development server using `python run.py` in each service
 To run the frontend app, in frontend folder, run `yarn run dev`
+
+## Configuration
+
+Configuration for every flask app is in `<folder>/app/__init__.py -> create_app()`
 
 ## Screenshots
 
