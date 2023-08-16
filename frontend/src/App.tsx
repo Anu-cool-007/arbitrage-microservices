@@ -104,6 +104,7 @@ const App = () => {
   return (
     <div className="w-full">
       <div className="flex gap-4 flex-col items-start pt-16 max-w-6xl m-auto">
+        {user && <span className="text-lg py-4">Welcome: {user.name}</span>}
         <span>
           Connection Status: {isConnected ? "Connected" : "Not Connected"}
         </span>
