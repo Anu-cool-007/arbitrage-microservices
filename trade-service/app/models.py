@@ -11,6 +11,7 @@ class Trade(db.Model):
     sell_exchange = db.Column(db.String(10), unique=False, nullable=False)
     buy_price = db.Column(db.Integer)
     sell_price = db.Column(db.Integer)
+    units = db.Column(db.Integer)
 
     date_added = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -24,4 +25,5 @@ class Trade(db.Model):
             "sell_exchange": self.token,
             "buy_price": self.token,
             "sell_price": self.token,
+            "units": self.units,
         }

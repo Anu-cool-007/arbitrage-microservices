@@ -10,6 +10,8 @@ login_manager = LoginManager()
 def create_app():
     app = Flask(__name__)
     CORS(app)
+    app.config["CORS_HEADERS"] = "Content-Type"
+    app.config["SECRET_KEY"] = "gjr39ng83os4_!67#"
     app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///auth.db"
 
     db.init_app(app)

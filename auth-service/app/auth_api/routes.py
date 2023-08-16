@@ -34,9 +34,10 @@ def get_users():
 
 @auth_api_blueprint.route("/api/user/create", methods=["POST"])
 def post_register():
-    name = request.get_json()["name"]
-    username = request.get_json()["username"]
-    password = request.get_json()["password"]
+    json = request.get_json()
+    name = json["name"]
+    username = json["username"]
+    password = json["password"]
     user = User.query.filter_by(username=username).first()
     if not user:
         user = User()
@@ -59,10 +60,11 @@ def post_register():
 
 @auth_api_blueprint.route("/api/user/login", methods=["POST"])
 def post_login():
-    username = request.get_json()["username"]
+    json = request.get_json()
+    username = json["username"]
     user = User.query.filter_by(username=username).first()
     if user:
-        if request.get_json()["password"] == user.password:
+        if json["password"] == user.password:
             user.generate_token()
             db.session.commit()
             login_user(user)

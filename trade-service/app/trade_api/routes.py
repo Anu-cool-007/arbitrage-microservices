@@ -25,8 +25,8 @@ def get_trades():
     return response
 
 
-@trade_api_blueprint.route("/api/user/create", methods=["POST"])
-def post_register():
+@trade_api_blueprint.route("/api/trade/create", methods=["POST"])
+def create_trade():
     token = request.headers.get("Authorization")
 
     response = AuthClient.get_user(token)
@@ -44,7 +44,8 @@ def post_register():
     buy_exchange = json["buy_exchange"]
     sell_exchange = json["sell_exchange"]
     buy_price = json["buy_price"]
-    sell_price = json["id"]
+    sell_price = json["sell_price"]
+    units = json["units"]
 
     trade = Trade()
     trade.user_id = user_id
@@ -54,6 +55,7 @@ def post_register():
     trade.sell_exchange = sell_exchange
     trade.buy_price = buy_price
     trade.sell_price = sell_price
+    trade.units = units
 
     db.session.add(user)
     db.session.commit()
