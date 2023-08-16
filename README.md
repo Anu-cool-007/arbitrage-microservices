@@ -2,7 +2,7 @@
 
 A collection of flask microservices and react frontend to make arbitrage trades
 
-It calculates Cross exchange arbitrage possibilities with multiple symbols, currencies and exchanges.
+It calculates cross exchange arbitrage possibilities with multiple symbols, currencies and exchanges.
 
 Grouping is done on Symbols and Currencies
 
@@ -25,7 +25,7 @@ Sample (not a representation of internal structure)
 
 ## Installation
 
-Clone the library. create python venv in each microservices
+Clone the repo. create python venv in each microservices
 
 - auth-service
 - arbitrage-service
@@ -35,11 +35,12 @@ Clone the library. create python venv in each microservices
 python -m venv venv
 ```
 
-In frontend folder, run `yarn install`
+In the frontend folder, run `yarn install`
 
 ## Usage
 
-To run flask microservices, in each folder, run development server using `python run.py` in each service
+To run flask microservices, in each folder, run development server using `python run.py`
+
 To run the frontend app, in frontend folder, run `yarn run dev`
 
 ### Routes
