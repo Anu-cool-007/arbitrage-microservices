@@ -9,7 +9,7 @@ class TradeClient:
         headers = {"Authorization": token}
         response = requests.request(
             method="POST",
-            url="http://cuser-service:5002/api/trade/create",
+            url="http://localhost:5002/api/trade/create",
             headers=headers,
             json=dataclasses.asdict(arbitrage),
         )

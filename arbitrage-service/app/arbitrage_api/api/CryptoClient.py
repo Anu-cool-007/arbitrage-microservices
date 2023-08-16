@@ -1,6 +1,6 @@
 import requests
 
-CMC_URL = "https://min-api.cryptocompare.com/data/v4/all/exchanges"
+CMC_URL = "https://min-api.cryptocompare.com/data/generateAvg"
 
 
 def get_crypto_data(

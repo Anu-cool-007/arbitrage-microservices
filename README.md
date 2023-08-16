@@ -21,6 +21,8 @@ Sample (not a representation of internal structure)
 
 ## API
 
+[CryptoCompare](https://www.cryptocompare.com)
+
 ## Installation
 
 Clone the library. create python venv in each microservices

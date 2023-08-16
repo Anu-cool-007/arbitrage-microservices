@@ -8,7 +8,7 @@ def create_app():
     app = Flask(__name__)
     app.config["SECRET_KEY"] = "gjr39dkjn344_!67#"
     # Crypto API config
-    app.config["USE_LOCAL_DATA"] = True
+    app.config["USE_LOCAL_DATA"] = False
     app.config[
         "API_KEY"
     ] = "563c5dde1bdac6228e047bfffd62c13c6601e87fe4aec136f908f8270ac4179b"
