@@ -81,4 +81,6 @@ Configuration for every flask app is in `<folder>/app/__init__.py -> create_app(
 - [ ] Update code documentation
 - [ ] Refresh crypto data regularly
 - [ ] Fix 2.3s API response from frontend
+- [ ] Order historical data by timestamp in frontend
 - [ ] Add Auth to arbitrage-service
+- [ ] Frontend trade and historical tables should have filters, pagination and column sorting
