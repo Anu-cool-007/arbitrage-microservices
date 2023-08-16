@@ -2,7 +2,7 @@ from . import db
 from datetime import datetime
 from flask_login import UserMixin
 
-
+# TODO: Encrypt password and token
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(255), unique=True, nullable=False)
@@ -11,6 +11,7 @@ class User(UserMixin, db.Model):
     token = db.Column(db.String(255), unique=True, nullable=True)
     date_added = db.Column(db.DateTime, default=datetime.utcnow)
 
+    # Generate token using usrename and current time in millis
     def generate_token(self):
         self.token = self.username + str(
             int(

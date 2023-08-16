@@ -1,5 +1,5 @@
 import requests
-from app.models.models import Arbitrage
+from app.models import Arbitrage
 import dataclasses
 
 

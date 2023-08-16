@@ -1,7 +1,7 @@
 from itertools import combinations
 import math
 
-from app.models.models import Arbitrage
+from app.models import Arbitrage
 
 
 # Calculate arbitrade from crypto data and threshold

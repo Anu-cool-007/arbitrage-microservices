@@ -1,12 +1,12 @@
 from flask import session, current_app
 
+from app.util import get_arbitrage
+
 from .. import sock
 from flask_socketio import emit
 import os
 import json
-from app.arbitrage_api.api.CryptoClient import get_crypto_data
-
-from app.util.util import get_arbitrage
+from .api.CryptoClient import get_crypto_data
 
 
 # Check if local crypto data is present and app is configured to load from it

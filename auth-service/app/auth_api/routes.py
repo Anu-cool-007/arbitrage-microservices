@@ -5,12 +5,12 @@ from ..models import User
 from flask import make_response, request, jsonify
 from flask_login import current_user, login_user, login_required
 
-
+# Flask login manager to load user by user_id
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.filter_by(id=user_id).first()
 
-
+# flask login manager to fetch user from request using auth token
 @login_manager.request_loader
 def load_user_from_request(request):
     token = request.headers.get("Authorization")
@@ -22,6 +22,7 @@ def load_user_from_request(request):
     return None
 
 
+# Fetch all users
 @auth_api_blueprint.route("/api/users", methods=["GET"])
 def get_users():
     data = []
@@ -32,6 +33,7 @@ def get_users():
     return response
 
 
+# Sign in API
 @auth_api_blueprint.route("/api/user/create", methods=["POST"])
 def post_register():
     json = request.get_json()
@@ -56,7 +58,7 @@ def post_register():
 
     return response
 
-
+# Log in API. Returns updated token
 @auth_api_blueprint.route("/api/user/login", methods=["POST"])
 def post_login():
     json = request.get_json()
@@ -74,7 +76,7 @@ def post_login():
 
     return make_response(jsonify({"message": "Not logged in"}), 401)
 
-
+# API for internal services to fetch user from user request
 @auth_api_blueprint.route("/api/user", methods=["GET"])
 def get_user():
     user: User = load_user_from_request(request=request)
