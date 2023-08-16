@@ -5,11 +5,12 @@ from ..models import Trade
 from flask import make_response, request, jsonify
 from .api.AuthClient import AuthClient
 
-
+# Fetch all trades by user
 @trade_api_blueprint.route("/api/trade", methods=["GET"])
 def get_trades():
+    # extract token from header
     token = request.headers.get("Authorization")
-
+    # fetch user by token
     response = AuthClient.get_user(token)
     print(token, response)
     if not response:
@@ -24,11 +25,12 @@ def get_trades():
     )
     return response
 
-
+# Create new trades
 @trade_api_blueprint.route("/api/trade/create", methods=["POST"])
 def create_trade():
+    # extract token from header
     token = request.headers.get("Authorization")
-
+    # fetch user by token
     response = AuthClient.get_user(token)
 
     if not response:
@@ -57,6 +59,7 @@ def create_trade():
     trade.sell_price = sell_price
     trade.units = units
 
+    # create new trade for the user
     db.session.add(trade)
     db.session.commit()
 
