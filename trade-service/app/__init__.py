@@ -12,7 +12,7 @@ def create_app():
     CORS(app)
     app.config["CORS_HEADERS"] = "Content-Type"
     app.config["SECRET_KEY"] = "gjr39ng83os4_!67#"
-    app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///auth.db"
+    app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///trade.db"
 
     db.init_app(app)
     login_manager.init_app(app)

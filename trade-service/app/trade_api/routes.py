@@ -11,17 +11,17 @@ def get_trades():
     token = request.headers.get("Authorization")
 
     response = AuthClient.get_user(token)
-
+    print(token, response)
     if not response:
         return make_response(jsonify({"message": "Not logged in"}), 401)
 
     user = response["result"]
 
-    trade_list = []
-    for row in Trade.query.filter_by(user_id=user["id"]).all():
-        trade_list.append(row.to_json())
+    trade_list = Trade.query.filter_by(user_id=user["id"]).all()
 
-    response = jsonify(trade_list)
+    response = jsonify(
+        {"message": "Get Success", "result": [trade.to_json() for trade in trade_list]}
+    )
     return response
 
 
@@ -37,7 +37,7 @@ def create_trade():
     user = response["result"]
 
     user_id = user["id"]
-    
+
     json = request.get_json()
     symbol = json["symbol"]
     currency = json["currency"]
@@ -57,7 +57,7 @@ def create_trade():
     trade.sell_price = sell_price
     trade.units = units
 
-    db.session.add(user)
+    db.session.add(trade)
     db.session.commit()
 
     response = jsonify({"message": "Trade added", "result": trade.to_json()})

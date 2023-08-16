@@ -18,12 +18,12 @@ class Trade(db.Model):
     def to_json(self):
         return {
             "id": self.id,
-            "user_id": self.name,
-            "symbol": self.username,
-            "currency": self.token,
-            "buy_exchange": self.token,
-            "sell_exchange": self.token,
-            "buy_price": self.token,
-            "sell_price": self.token,
+            "user_id": self.user_id,
+            "symbol": self.symbol,
+            "currency": self.currency,
+            "buy_exchange": self.buy_exchange,
+            "sell_exchange": self.sell_exchange,
+            "buy_price": self.buy_price,
+            "sell_price": self.sell_price,
             "units": self.units,
         }
