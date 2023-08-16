@@ -99,7 +99,7 @@ flask-service               # root folder
 
 ## TODO (in priority order)
 
-- [ ] Update code documentation
+- [x] Update code documentation
 - [ ] Refresh crypto data regularly
 - [ ] Fix 2.3s API response from frontend
 - [ ] Order historical data by timestamp in frontend
