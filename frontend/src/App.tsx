@@ -99,6 +99,12 @@ const App = () => {
     }
   }, [user]);
 
+  useEffect(() => {
+    if (user) {
+      fetchTrade();
+    }
+  }, [user, fetchTrade]);
+
   if (!user) return <LoginForm onLogin={handleLogin} />;
 
   return (

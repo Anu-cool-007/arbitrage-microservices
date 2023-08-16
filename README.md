@@ -23,6 +23,13 @@ In frontend folder, run `yarn install`
 To run flask microservices, in each folder, run development server using `python run.py` in each service
 To run the frontend app, in frontend folder, run `yarn run dev`
 
+### Routes
+
+- Arbitrage Service: http://localhost:5001
+- Trade Service: http://localhost:5002
+- Auth Service: http://localhost:5003
+- Fronetend: http://localhost:5173
+
 ## Configuration
 
 Configuration for every flask app is in `<folder>/app/__init__.py -> create_app()`

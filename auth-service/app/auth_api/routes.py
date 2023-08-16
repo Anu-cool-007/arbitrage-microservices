@@ -46,7 +46,6 @@ def post_register():
         user.password = password
 
         user.generate_token()
-        print(user)
 
         db.session.add(user)
         db.session.commit()
@@ -79,7 +78,6 @@ def post_login():
 @auth_api_blueprint.route("/api/user", methods=["GET"])
 def get_user():
     user: User = load_user_from_request(request=request)
-    print(user)
     if user:
         return make_response(jsonify({"result": user.to_json()}))
 

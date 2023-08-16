@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_socketio import SocketIO
-from config import *
+
 sock = SocketIO()
 
 
@@ -8,7 +8,9 @@ def create_app():
     app = Flask(__name__)
     app.config["SECRET_KEY"] = "gjr39dkjn344_!67#"
     app.config["USE_LOCAL_DATA"] = True
-    app.config["API_KEY"] = "563c5dde1bdac6228e047bfffd62c13c6601e87fe4aec136f908f8270ac4179b"
+    app.config[
+        "API_KEY"
+    ] = "563c5dde1bdac6228e047bfffd62c13c6601e87fe4aec136f908f8270ac4179b"
     app.config["SYMBOLS"] = ["BTC", "ETH", "USDT"]
     app.config["CURRENCIES"] = ["USD", "EUR", "GBP"]
     app.config["EXCHANGES"] = ["Binance", "Coinbase", "Kraken", "Bitfinex"]

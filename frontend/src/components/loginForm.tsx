@@ -25,7 +25,7 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
     })
       .then((response) => response.json())
       .then((data) => data.result && onLogin(data.result as User))
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   };
 
   const handleLogin = () => {
