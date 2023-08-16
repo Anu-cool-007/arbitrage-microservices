@@ -20,3 +20,13 @@ In frontend folder, run `yarn install`
 
 To run flask microservices, in each folder, run development server using `python run.py` in each service
 To run the frontend app, in frontend folder, run `yarn run dev`
+
+## Screenshots
+
+### Home Screen
+
+![Home Screen](home.png)
+
+### Login Screen
+
+![Login Screen](login.png)
